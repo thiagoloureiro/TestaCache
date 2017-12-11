@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using TestaCache.AOP.Aspects;
+using PostSharp.Aspects;
 
 namespace TestaCache.Cache
 {

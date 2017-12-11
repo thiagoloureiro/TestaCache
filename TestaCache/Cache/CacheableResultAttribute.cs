@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using PostSharp.Aspects;
+using System.Linq;
 using System.Security.Principal;
-using TestaCache.AOP.Aspects;
 
 namespace TestaCache.Cache
 {
+    [Serializable]
     public class CacheableResultAttribute : MethodInterceptionAspect
     {
         public sealed override void OnInvoke(MethodInterceptionArgs args)

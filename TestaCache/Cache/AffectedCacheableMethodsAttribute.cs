@@ -1,5 +1,5 @@
-﻿using System;
-using TestaCache.AOP.Aspects;
+﻿using PostSharp.Aspects;
+using System;
 
 namespace TestaCache.Cache
 {

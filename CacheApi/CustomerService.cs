@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq.Expressions;
-using TestaCache.AOP;
 using TestaCache.Cache;
+using TestaCache.Redis;
 
 namespace CacheApi
 {
-    public class CustomerService : IDynamicMetaObjectProvider
+    public class CustomerService
     {
-        [CacheableResult]
+        [RedisCacheableResult]
         public List<Customer> ReturnCustomer()
         {
             var lstCustomer = new List<Customer>();
@@ -31,11 +29,6 @@ namespace CacheApi
             lstCustomer.Add(customer1);
 
             return lstCustomer;
-        }
-
-        public DynamicMetaObject GetMetaObject(Expression parameter)
-        {
-            return new AspectWeaver(parameter, this);
         }
     }
 }

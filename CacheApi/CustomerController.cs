@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using System.Collections.Generic;
+using Nancy;
 
 namespace CacheApi
 {
@@ -6,9 +7,9 @@ namespace CacheApi
     {
         public CustomerController() : base("/customers")
         {
-            dynamic obj = new CustomerService();
-            obj.ReturnCustomer();
-            Get["/"] = _ => Response.AsJson("ok");
+            var obj = new CustomerService();
+            var ret = obj.ReturnCustomer();
+            Get["/"] = _ => Response.AsJson(ret);
         }
     }
 }
