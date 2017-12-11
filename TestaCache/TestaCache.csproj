@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADD5791B-D724-4DE4-B141-505662351D9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestaCache</RootNamespace>
+    <AssemblyName>TestaCache</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Caching" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AOP\Aspects\AdviceArgs.cs" />
+    <Compile Include="AOP\Aspects\Arguments.cs" />
+    <Compile Include="AOP\Aspects\Aspect.cs" />
+    <Compile Include="AOP\Aspects\FlowBehavior.cs" />
+    <Compile Include="AOP\Aspects\IAspect.cs" />
+    <Compile Include="AOP\Aspects\ILocationInterceptionAspect.cs" />
+    <Compile Include="AOP\Aspects\IMethodAspect.cs" />
+    <Compile Include="AOP\Aspects\LocationInterceptionArgs.cs" />
+    <Compile Include="AOP\Aspects\LocationInterceptionAspect.cs" />
+    <Compile Include="AOP\Aspects\MethodArgs.cs" />
+    <Compile Include="AOP\Aspects\MethodExecutionArgs.cs" />
+    <Compile Include="AOP\Aspects\MethodInterceptionArgs.cs" />
+    <Compile Include="AOP\Aspects\MethodInterceptionAspect.cs" />
+    <Compile Include="AOP\Aspects\OnMethodBoundaryAspect.cs" />
+    <Compile Include="AOP\AspectWeaver.cs" />
+    <Compile Include="AOP\Core\DelegateFactory.cs" />
+    <Compile Include="AOP\Core\Methods\ActionInterceptionArgs.cs" />
+    <Compile Include="AOP\Core\Methods\ActionInterceptionRefArgs.cs" />
+    <Compile Include="AOP\Core\Methods\BoundaryAspectGenerator.cs" />
+    <Compile Include="AOP\Core\Methods\FuncInterceptionArgs.cs" />
+    <Compile Include="AOP\Core\Methods\FuncInterceptionRefArgs.cs" />
+    <Compile Include="AOP\Core\Methods\InterceptionAspectGenerator.cs" />
+    <Compile Include="AOP\Core\Methods\RefArgsExtensions.cs" />
+    <Compile Include="AOP\Core\Properties\GetterGenerator.cs" />
+    <Compile Include="AOP\Core\Properties\PropertyInterceptionArgs.cs" />
+    <Compile Include="AOP\Core\Properties\SetterGenerator.cs" />
+    <Compile Include="Cache\AffectedCacheableMethodsAttribute.cs" />
+    <Compile Include="Cache\CacheableResultAttribute.cs" />
+    <Compile Include="Cache\ClearFullCacheAttribute.cs" />
+    <Compile Include="Cache\MethodResultCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
