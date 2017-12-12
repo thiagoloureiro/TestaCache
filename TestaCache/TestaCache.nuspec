@@ -6,12 +6,12 @@
     <title>$title$</title>
     <authors>Thiago Loureiro</authors>
     <owners>$author$</owners>
-    <projectUrl>https://github.com/thiagoloureiro/Megaphone</projectUrl>
-    <iconUrl>https://image.flaticon.com/icons/png/128/138/138304.png</iconUrl>
+    <projectUrl>https://github.com/thiagoloureiro/TestaCache</projectUrl>
+    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Release of Megaphone microservice framework</releaseNotes>
+    <releaseNotes>Release of TestaCache</releaseNotes>
     <copyright>Copyright 2017</copyright>
-    <tags>Nancy WebApi Microservices Services ServiceDiscovery</tags>
+    <tags>Cache with Redis and MemoryCache</tags>
   </metadata>
 </package>
