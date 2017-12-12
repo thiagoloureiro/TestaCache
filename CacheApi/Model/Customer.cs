@@ -1,4 +1,4 @@
-﻿namespace CacheApi
+﻿namespace CacheApi.Model
 {
     public class Customer
     {

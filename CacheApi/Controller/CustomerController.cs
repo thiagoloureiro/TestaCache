@@ -1,7 +1,8 @@
-﻿using Nancy;
+﻿using CacheApi.Service;
+using Nancy;
 using System;
 
-namespace CacheApi
+namespace CacheApi.Controller
 {
     public class CustomerController : NancyModule
     {

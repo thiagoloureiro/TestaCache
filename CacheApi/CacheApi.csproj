@@ -60,11 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClearService.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="ClearController.cs" />
-    <Compile Include="CustomerController.cs" />
-    <Compile Include="CustomerService.cs" />
+    <Compile Include="Service\ClearService.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Controller\ClearController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Service\CustomerService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

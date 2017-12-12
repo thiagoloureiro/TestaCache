@@ -1,6 +1,6 @@
 ﻿using TestaCache.Redis.Attributes;
 
-namespace CacheApi
+namespace CacheApi.Service
 {
     public class ClearService
     {

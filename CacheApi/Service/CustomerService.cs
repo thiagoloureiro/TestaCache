@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using CacheApi.Model;
+using System.Collections.Generic;
 using TestaCache.Redis.Attributes;
 
-namespace CacheApi
+namespace CacheApi.Service
 {
     public class CustomerService
     {
