@@ -1,5 +1,8 @@
+![Cache](https://github.com/thiagoloureiro/TestaCache/blob/master/cache-icon.png?raw=true)  
+
 # TestaCache
-Testa Cache Component to Create Cache using MemoryCache or Redis in C#
+
+#### .NET Component to implement cache in your application Cache using MemoryCache or Redis in C#
 
 ## How to Use:
 Open Package Manager Console and run:
