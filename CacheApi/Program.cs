@@ -1,5 +1,6 @@
 ﻿using Nancy.Hosting.Self;
 using System;
+using System.Configuration;
 
 namespace CacheApi
 {
@@ -8,7 +9,6 @@ namespace CacheApi
         private static void Main(string[] args)
         {
             Console.WriteLine("Starting NancyFX...");
-
             using (var nancyHost = new NancyHost(new Uri("http://localhost:8889/nancy/")))
             {
                 nancyHost.Start();

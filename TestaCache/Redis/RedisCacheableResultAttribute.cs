@@ -1,6 +1,6 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PostSharp.Aspects;
+using System;
 using System.Collections.Generic;
 
 namespace TestaCache.Redis
@@ -24,17 +24,18 @@ namespace TestaCache.Redis
             }
 
             base.OnInvoke(args);
+
             cache.StringSet(args.Method.Name, Serialize(args.ReturnValue));
         }
 
-        private string Serialize(object obj)
+        private static string Serialize(object obj)
         {
             return JsonConvert.SerializeObject(obj, _settings);
         }
 
-        private object Deserialize(string data)
+        private static dynamic Deserialize(string data)
         {
-            return JsonConvert.DeserializeObject<List<object>>(data, _settings);
+            return JsonConvert.DeserializeObject<List<dynamic>>(data, _settings);
         }
     }
 }

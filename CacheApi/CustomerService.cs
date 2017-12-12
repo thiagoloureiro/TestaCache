@@ -6,10 +6,10 @@ namespace CacheApi
 {
     public class CustomerService
     {
-        [RedisCacheableResult]
-        public List<Customer> ReturnCustomer()
+        [CacheableResult]
+        public List<dynamic> ReturnCustomer()
         {
-            var lstCustomer = new List<Customer>();
+            var lstCustomer = new List<dynamic>();
 
             var customer = new Customer
             {

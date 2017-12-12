@@ -7,9 +7,12 @@ namespace TestaCache.Redis
     {
         static RedisConnectorHelper()
         {
+            var config = RedisConfiguration.GetRedisConfiguration();
+
             lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
             {
-                return ConnectionMultiplexer.Connect("localhost");
+                var str = $"{config.server}:{config.port},name={config.name},password={config.password}";
+                return ConnectionMultiplexer.Connect(str);
             });
         }
 
