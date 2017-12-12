@@ -7,7 +7,7 @@
     <authors>Thiago Loureiro</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/thiagoloureiro/TestaCache</projectUrl>
-    <iconUrl></iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/thiagoloureiro/TestaCache/master/cache-icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Release of TestaCache</releaseNotes>
