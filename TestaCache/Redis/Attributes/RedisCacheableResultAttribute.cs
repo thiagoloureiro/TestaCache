@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
-using PostSharp.Aspects;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using PostSharp.Aspects;
 
-namespace TestaCache.Redis
+namespace TestaCache.Redis.Attributes
 {
     [Serializable]
     public class RedisCacheableResultAttribute : MethodInterceptionAspect
     {
-        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Objects };
+        private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Objects };
 
         public sealed override void OnInvoke(MethodInterceptionArgs args)
         {
@@ -30,12 +30,12 @@ namespace TestaCache.Redis
 
         private static string Serialize(object obj)
         {
-            return JsonConvert.SerializeObject(obj, _settings);
+            return JsonConvert.SerializeObject(obj, Settings);
         }
 
         private static dynamic Deserialize(string data)
         {
-            return JsonConvert.DeserializeObject<List<dynamic>>(data, _settings);
+            return JsonConvert.DeserializeObject<List<dynamic>>(data, Settings);
         }
     }
 }

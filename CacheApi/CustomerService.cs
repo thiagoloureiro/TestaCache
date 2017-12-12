@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using TestaCache.Cache;
-using TestaCache.Redis;
+using TestaCache.Redis.Attributes;
 
 namespace CacheApi
 {
     public class CustomerService
     {
-        [CacheableResult]
+        [RedisCacheableResult]
         public List<dynamic> ReturnCustomer()
         {
             var lstCustomer = new List<dynamic>();
@@ -29,6 +28,12 @@ namespace CacheApi
             lstCustomer.Add(customer1);
 
             return lstCustomer;
+        }
+
+        [RedisInvalidate("ReturnCustomer")]
+        public bool UpdateCustomer()
+        {
+            return true;
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using System;
-using Nancy;
+﻿using Nancy;
+using System;
 
 namespace CacheApi
 {
@@ -10,8 +10,18 @@ namespace CacheApi
             try
             {
                 var obj = new CustomerService();
-                var ret = obj.ReturnCustomer();
-                Get["/"] = _ => Response.AsJson(ret);
+
+                Get["/"] = _ =>
+                {
+                    var ret = obj.ReturnCustomer();
+                    return Response.AsJson(ret);
+                };
+
+                Post["/"] = _ =>
+                {
+                    obj.UpdateCustomer();
+                    return Response.AsJson("Cleared");
+                };
             }
             catch (Exception e)
             {
