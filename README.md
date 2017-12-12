@@ -11,18 +11,22 @@ Open Package Manager Console and run:
 
 ## Add the following keys for Redis Configuration on app.config
   ```
-    <appSettings>
+<appSettings>
     <add key="RedisCache_server" value="xxx" />
     <add key="RedisCache_port" value="9312" />
     <add key="RedisCache_name" value="redistogo" />
     <add key="RedisCache_password" value="xxxx" />
     <add key="RedisCache_ssl" value="false" />
-  </appSettings>```
+</appSettings>
+  ```
   
 
 ## Usage with Redis
 Create the Attribute **[RedisCacheableResult]** for Redis usage, in case of Redis the type of **List** must be dynamic, this version doesn't support typed objects for Redis
-So use **List<dynamic>**
+So use ```List<dynamic>```
+
+#### Code Sample
+
 ``` 
 [RedisCacheableResult]
 public List<dynamic> ReturnCustomer()
@@ -52,6 +56,8 @@ public List<dynamic> ReturnCustomer()
 
 ## Usage with MemoryCache
 Create the Attribute **[CacheableResult]**
+
+#### Code Sample
 ```
 [CacheableResult]
 public List<Customer> ReturnCustomer()
@@ -81,6 +87,8 @@ public List<Customer> ReturnCustomer()
 	
 ## Clear / Invalidate Cache with Redis
 Add **[RedisInvalidate("ReturnCustomer")** with the MethodName who Cached the information to invalidate/clear
+
+#### Code Sample
 ```
 [RedisInvalidate("ReturnCustomer")]
 public bool UpdateCustomer()
@@ -91,6 +99,8 @@ public bool UpdateCustomer()
 
 ## Clear / Invalidate Cache with MemoryCache
 Add **[AffectedCacheableMethods("ReturnCustomer")** with the MethodName who Cached the information to invalidate/clear
+
+#### Code Sample
 ```
 [RedisInvalidate("ReturnCustomer")]
 public bool UpdateCustomer()
