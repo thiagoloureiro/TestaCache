@@ -3,11 +3,12 @@ Testa Cache Component to Create Cache using MemoryCache or Redis in C#
 
 ## How to Use:
 Open Package Manager Console and run:
+
 ```Install-Package TestaCache```
 
 ## .NET Framework Support
-.NET Framework 4.6+
-.NET Core 1.1/2.0 will be supported in v1.1 (under development)
+- .NET Framework 4.6+
+- .NET Core 1.1/2.0 will be supported in v1.1 (under development)
 
 ## Add the following keys for Redis Configuration on app.config
   ```
