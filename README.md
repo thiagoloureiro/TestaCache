@@ -8,6 +8,9 @@
 
 [![NuGet](https://buildstats.info/nuget/TestaCache)](http://www.nuget.org/packages/TestaCache)
 
+This package use PostSharp Essentials, so it's limited to use up to 10 Classes with the attributes.
+We are planning to use another AOP in the next version.
+
 ## How to Use:
 Open Package Manager Console and run:
 
