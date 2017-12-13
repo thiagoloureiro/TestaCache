@@ -4,6 +4,8 @@
 
 #### .NET Component to implement cache in your application Cache using MemoryCache or Redis in C#
 
+[![NuGet](https://buildstats.info/nuget/TestaCache)](http://www.nuget.org/packages/TestaCache)
+
 ## How to Use:
 Open Package Manager Console and run:
 
