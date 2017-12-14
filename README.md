@@ -113,7 +113,7 @@ Add **[AffectedCacheableMethods("ReturnCustomer")** with the MethodName who Cach
 
 #### Code Sample
 ```
-[RedisInvalidate("ReturnCustomer")]
+[AffectedCacheableMethods("ReturnCustomer")]
 public bool UpdateCustomer()
 {
 	return true;
