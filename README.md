@@ -66,11 +66,11 @@ public List<dynamic> ReturnCustomer()
 ```
 
 ## Usage with MemoryCache
-Create the Attribute **[CacheableResult]**
+Create the Attribute **[CacheableResult(600)]** 10 minutes Cache (600 seconds)
 
 #### Code Sample
 ```
-[CacheableResult]
+[CacheableResult(600)]
 public List<Customer> ReturnCustomer()
 {
 	var lstCustomer = new List<Customer>();
