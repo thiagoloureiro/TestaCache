@@ -8,6 +8,13 @@ namespace TestaCache.Cache
     [Serializable]
     public class CacheableResultAttribute : MethodInterceptionAspect
     {
+        private double _cacheRetainSeconds;
+
+        public CacheableResultAttribute(params double[] cacheRetainSeconds)
+        {
+            _cacheRetainSeconds = cacheRetainSeconds[0];
+        }
+
         public sealed override void OnInvoke(MethodInterceptionArgs args)
         {
             var cache = MethodResultCache.GetCache(args.Method);
@@ -21,7 +28,7 @@ namespace TestaCache.Cache
 
             base.OnInvoke(args);
 
-            cache.CacheCallResult(args.ReturnValue, arguments);
+            cache.CacheCallResult(args.ReturnValue, arguments, _cacheRetainSeconds);
         }
     }
 }

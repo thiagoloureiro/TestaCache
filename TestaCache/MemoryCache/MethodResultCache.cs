@@ -10,13 +10,12 @@ namespace TestaCache.Cache
     {
         private readonly string _methodName;
         private MemoryCache _cache;
-        private readonly TimeSpan _expirationPeriod;
+        private double _cacheRetainSeconds;
         private static readonly Dictionary<string, MethodResultCache> MethodCaches = new Dictionary<string, MethodResultCache>();
 
         public MethodResultCache(string methodName, int expirationPeriod = 30)
         {
             _methodName = methodName;
-            _expirationPeriod = new TimeSpan(0, 0, expirationPeriod, 0);
             _cache = new MemoryCache(methodName);
         }
 
@@ -27,9 +26,9 @@ namespace TestaCache.Cache
             return key;
         }
 
-        public void CacheCallResult(object result, IEnumerable<object> arguments)
+        public void CacheCallResult(object result, IEnumerable<object> arguments, double _cacheRetainSeconds)
         {
-            _cache.Set(GetCacheKey(arguments), result, DateTimeOffset.Now.Add(_expirationPeriod));
+            _cache.Set(GetCacheKey(arguments), result, DateTimeOffset.Now.AddSeconds(_cacheRetainSeconds));
         }
 
         public object GetCachedResult(IEnumerable<object> arguments)

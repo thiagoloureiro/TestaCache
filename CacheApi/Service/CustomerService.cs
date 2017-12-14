@@ -1,12 +1,13 @@
 ﻿using CacheApi.Model;
 using System.Collections.Generic;
+using TestaCache.Cache;
 using TestaCache.Redis.Attributes;
 
 namespace CacheApi.Service
 {
     public class CustomerService
     {
-        [RedisCacheableResult]
+        [CacheableResult(600)] // 600 Seconds, 10 Minutes cache Policy
         public List<dynamic> ReturnCustomer()
         {
             var lstCustomer = new List<dynamic>();
