@@ -1,7 +1,6 @@
 ﻿using CacheApi.Model;
 using System.Collections.Generic;
 using TestaCache.Cache;
-using TestaCache.Redis.Attributes;
 
 namespace CacheApi.Service
 {
@@ -32,7 +31,7 @@ namespace CacheApi.Service
             return lstCustomer;
         }
 
-        [RedisInvalidate("ReturnCustomer")]
+        [AffectedCacheableMethods("ReturnCustomer")]
         public bool UpdateCustomer()
         {
             return true;
