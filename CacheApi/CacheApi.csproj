@@ -36,8 +36,8 @@
   <ItemGroup>
     <PackageReference Include="Nancy" Version="1.4.4" />
     <PackageReference Include="Nancy.Hosting.Self" Version="1.4.1" />
-    <PackageReference Include="PostSharp" Version="5.0.48" />
-    <PackageReference Include="PostSharp.Redist" Version="5.0.48" />
+    <PackageReference Include="PostSharp" Version="5.0.49" />
+    <PackageReference Include="PostSharp.Redist" Version="5.0.49" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

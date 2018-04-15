@@ -32,9 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
-    <PackageReference Include="PostSharp" Version="5.0.48" />
-    <PackageReference Include="PostSharp.Redist" Version="5.0.48" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="PostSharp" Version="5.0.49" />
+    <PackageReference Include="PostSharp.Redist" Version="5.0.49" />
     <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
   </ItemGroup>
   <ItemGroup>
