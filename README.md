@@ -2,6 +2,8 @@
 
 # TestaCache
 
+In this version added .NET Core / Standard Support, still under development
+
 #### .NET Component to implement cache in your application Cache using MemoryCache or Redis in C#
 
 <img src="https://wiprojects.visualstudio.com/_apis/public/build/definitions/8ee69205-3d59-40e7-8207-9cc6a8fa8785/6/badge"/>
