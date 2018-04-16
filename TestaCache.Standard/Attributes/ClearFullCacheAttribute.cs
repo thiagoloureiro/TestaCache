@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Reflection;
 using PostSharp.Aspects;
+using PostSharp.Serialization;
 
 namespace TestaCache.Cache
 {
-    [Serializable]
+    [PSerializable]
     public class ClearFullCacheAttribute : MethodInterceptionAspect
     {
-        private MethodInfo[] _affectedMethods;
-        private string _className;
+        public MethodInfo[] _affectedMethods;
+        public string _className;
 
         public ClearFullCacheAttribute(string str)
         {

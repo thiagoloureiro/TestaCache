@@ -1,14 +1,12 @@
-﻿using System;
-using PostSharp.Aspects;
-using System.Linq;
-using System.Security.Principal;
+﻿using PostSharp.Aspects;
+using PostSharp.Serialization;
 
 namespace TestaCache.Cache
 {
-    [Serializable]
+    [PSerializable]
     public class CacheableResultAttribute : MethodInterceptionAspect
     {
-        private double _cacheRetainSeconds;
+        public double _cacheRetainSeconds;
 
         public CacheableResultAttribute(params double[] cacheRetainSeconds)
         {
@@ -18,8 +16,7 @@ namespace TestaCache.Cache
         public sealed override void OnInvoke(MethodInterceptionArgs args)
         {
             var cache = MethodResultCache.GetCache(args.Method);
-            var arguments = args.Arguments.Union(new[] { WindowsIdentity.GetCurrent().Name }).ToList();
-            var result = cache.GetCachedResult(arguments);
+            var result = cache.GetCachedResult(args.Method.ToString());
             if (result != null)
             {
                 args.ReturnValue = result;
@@ -28,7 +25,7 @@ namespace TestaCache.Cache
 
             base.OnInvoke(args);
 
-            cache.CacheCallResult(args.ReturnValue, arguments, _cacheRetainSeconds);
+            cache.CacheCallResult(args.ReturnValue, args.Method.ToString(), _cacheRetainSeconds);
         }
     }
 }

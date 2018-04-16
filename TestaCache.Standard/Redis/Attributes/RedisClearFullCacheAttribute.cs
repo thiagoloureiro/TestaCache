@@ -1,9 +1,9 @@
 ﻿using PostSharp.Aspects;
-using System;
+using PostSharp.Serialization;
 
 namespace TestaCache.Redis.Attributes
 {
-    [Serializable]
+    [PSerializable]
     public class RedisClearFullCacheAttribute : MethodInterceptionAspect
     {
         public sealed override void OnInvoke(MethodInterceptionArgs args)

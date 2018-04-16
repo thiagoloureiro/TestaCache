@@ -1,45 +1,37 @@
-﻿using System;
+﻿using Microsoft.Extensions.Caching.Memory;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.Caching;
 
 namespace TestaCache.Cache
 {
     public class MethodResultCache
     {
-        private readonly string _methodName;
         private MemoryCache _cache;
         private double _cacheRetainSeconds;
         private static readonly Dictionary<string, MethodResultCache> MethodCaches = new Dictionary<string, MethodResultCache>();
 
         public MethodResultCache(string methodName, int expirationPeriod = 30)
         {
-            _methodName = methodName;
-            _cache = new MemoryCache(methodName);
+            var options = new MemoryCacheOptions { ExpirationScanFrequency = TimeSpan.FromMinutes(expirationPeriod) };
+            _cache = new MemoryCache(options);
         }
 
-        private string GetCacheKey(IEnumerable<object> arguments)
+        public void CacheCallResult(object result, string argument, double _cacheRetainSeconds)
         {
-            var key = string.Format(
-              $"{_methodName}({string.Join(", ", arguments.Select(x => x != null ? x.ToString() : "<Null>"))})");
-            return key;
+            _cache.Set(argument, result, DateTimeOffset.Now.AddSeconds(_cacheRetainSeconds));
         }
 
-        public void CacheCallResult(object result, IEnumerable<object> arguments, double _cacheRetainSeconds)
+        public object GetCachedResult(string argument)
         {
-            _cache.Set(GetCacheKey(arguments), result, DateTimeOffset.Now.AddSeconds(_cacheRetainSeconds));
-        }
-
-        public object GetCachedResult(IEnumerable<object> arguments)
-        {
-            return _cache.Get(GetCacheKey(arguments));
+            return _cache.Get(argument);
         }
 
         public void ClearCachedResults()
         {
             _cache.Dispose();
-            _cache = new MemoryCache(_methodName);
+            var options = new MemoryCacheOptions { ExpirationScanFrequency = TimeSpan.FromMinutes(30) };
+            _cache = new MemoryCache(options);
         }
 
         public static MethodResultCache GetCache(string methodName)

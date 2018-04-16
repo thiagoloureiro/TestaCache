@@ -1,14 +1,14 @@
-﻿using System;
-using PostSharp.Aspects;
+﻿using PostSharp.Aspects;
+using PostSharp.Serialization;
 using StackExchange.Redis;
 
 namespace TestaCache.Redis.Attributes
 {
-    [Serializable]
+    [PSerializable]
     public class RedisInvalidateAttribute : MethodInterceptionAspect
     {
-        private IDatabase _cache;
-        private readonly string[] _affectedMethods;
+        public IDatabase _cache;
+        public string[] _affectedMethods;
 
         public RedisInvalidateAttribute(params string[] methods)
         {

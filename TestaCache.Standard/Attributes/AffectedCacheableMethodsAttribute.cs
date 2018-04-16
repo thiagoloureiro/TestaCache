@@ -1,12 +1,12 @@
 ﻿using PostSharp.Aspects;
-using System;
+using PostSharp.Serialization;
 
 namespace TestaCache.Cache
 {
-    [Serializable]
+    [PSerializable]
     public class AffectedCacheableMethodsAttribute : MethodInterceptionAspect
     {
-        private readonly string[] _affectedMethods;
+        public string[] _affectedMethods;
 
         public AffectedCacheableMethodsAttribute(params string[] methods)
         {

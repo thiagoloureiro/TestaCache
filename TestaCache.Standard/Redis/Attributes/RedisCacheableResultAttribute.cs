@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PostSharp.Aspects;
+using PostSharp.Serialization;
+using System.Collections.Generic;
 
 namespace TestaCache.Redis.Attributes
 {
-    [Serializable]
+    [PSerializable]
     public class RedisCacheableResultAttribute : MethodInterceptionAspect
     {
-        private static readonly JsonSerializerSettings Settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Objects };
+        public static JsonSerializerSettings Settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Objects };
 
         public sealed override void OnInvoke(MethodInterceptionArgs args)
         {
