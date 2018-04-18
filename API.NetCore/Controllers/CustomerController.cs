@@ -1,16 +1,16 @@
-﻿using CacheApi.Service;
+﻿using API.NetCore.Service;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CacheApi.NetCore.Controllers
+namespace API.NetCore.Controllers
 {
-    [Route("api/customers")]
+    [Produces("application/json")]
+    [Route("api/Customer")]
     public class CustomerController : Controller
     {
         // GET api/values
         [HttpGet]
         public object Get()
         {
-            var test = TestaCache.Standard.Teste.abcd;
             var obj = new CustomerService();
             var ret = obj.ReturnCustomer();
             return Json(ret);

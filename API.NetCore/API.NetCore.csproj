@@ -2,8 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\ClearService.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
@@ -11,8 +19,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
     <PackageReference Include="PostSharp" Version="5.0.49" />
-    <PackageReference Include="PostSharp.Redist" Version="5.0.49" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestaCache.Standard\TestaCache.Standard.csproj" />
+    <ProjectReference Include="..\TestaCache.NetStandard\TestaCache.NetStandard.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
-using System.Collections.Generic;
+using TestaCache.Redis;
 
-namespace TestaCache.Redis.Attributes
+namespace TestaCache.NetStandard.Redis.Attributes
 {
     [PSerializable]
     public class RedisCacheableResultAttribute : MethodInterceptionAspect

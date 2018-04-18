@@ -1,4 +1,4 @@
-﻿namespace TestaCache.Redis
+﻿namespace TestaCache.NetStandard.Redis
 {
     public class RedisConfigurationModel
     {

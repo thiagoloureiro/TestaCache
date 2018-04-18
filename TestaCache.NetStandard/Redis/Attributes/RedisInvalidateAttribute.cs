@@ -1,8 +1,9 @@
 ﻿using PostSharp.Aspects;
 using PostSharp.Serialization;
 using StackExchange.Redis;
+using TestaCache.Redis;
 
-namespace TestaCache.Redis.Attributes
+namespace TestaCache.NetStandard.Redis.Attributes
 {
     [PSerializable]
     public class RedisInvalidateAttribute : MethodInterceptionAspect
