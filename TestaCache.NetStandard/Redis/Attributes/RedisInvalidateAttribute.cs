@@ -1,7 +1,6 @@
 ﻿using PostSharp.Aspects;
 using PostSharp.Serialization;
 using StackExchange.Redis;
-using TestaCache.Redis;
 
 namespace TestaCache.NetStandard.Redis.Attributes
 {

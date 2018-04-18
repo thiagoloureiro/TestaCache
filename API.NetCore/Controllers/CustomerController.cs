@@ -7,12 +7,13 @@ namespace API.NetCore.Controllers
     [Route("api/Customer")]
     public class CustomerController : Controller
     {
-        // GET api/values
         [HttpGet]
         public object Get()
         {
-            var obj = new CustomerService();
-            var ret = obj.ReturnCustomer();
+            var test = new CustomerService();
+            var ret = test.ReturnCustomer();
+            var retRedis = test.ReturnCustomer2();
+
             return Json(ret);
         }
     }

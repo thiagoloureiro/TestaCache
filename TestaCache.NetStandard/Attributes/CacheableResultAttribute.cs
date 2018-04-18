@@ -1,6 +1,6 @@
 ﻿using PostSharp.Aspects;
 using PostSharp.Serialization;
-using TestaCache.Cache;
+using TestaCache.NetStandard.MemoryCache;
 
 namespace TestaCache.NetStandard.Attributes
 {

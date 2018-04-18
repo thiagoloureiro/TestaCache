@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
-using TestaCache.Redis;
 
 namespace TestaCache.NetStandard.Redis.Attributes
 {

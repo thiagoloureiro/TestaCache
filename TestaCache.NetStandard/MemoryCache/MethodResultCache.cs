@@ -1,20 +1,20 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Microsoft.Extensions.Caching.Memory;
 
-namespace TestaCache.Cache
+namespace TestaCache.NetStandard.MemoryCache
 {
     public class MethodResultCache
     {
-        private MemoryCache _cache;
+        private Microsoft.Extensions.Caching.Memory.MemoryCache _cache;
         private double _cacheRetainSeconds;
         private static readonly Dictionary<string, MethodResultCache> MethodCaches = new Dictionary<string, MethodResultCache>();
 
         public MethodResultCache(string methodName, int expirationPeriod = 30)
         {
             var options = new MemoryCacheOptions { ExpirationScanFrequency = TimeSpan.FromMinutes(expirationPeriod) };
-            _cache = new MemoryCache(options);
+            _cache = new Microsoft.Extensions.Caching.Memory.MemoryCache(options);
         }
 
         public void CacheCallResult(object result, string argument, double _cacheRetainSeconds)
@@ -31,7 +31,7 @@ namespace TestaCache.Cache
         {
             _cache.Dispose();
             var options = new MemoryCacheOptions { ExpirationScanFrequency = TimeSpan.FromMinutes(30) };
-            _cache = new MemoryCache(options);
+            _cache = new Microsoft.Extensions.Caching.Memory.MemoryCache(options);
         }
 
         public static MethodResultCache GetCache(string methodName)

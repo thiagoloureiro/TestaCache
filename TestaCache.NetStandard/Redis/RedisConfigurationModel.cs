@@ -7,5 +7,6 @@
         public string name { get; set; }
         public string password { get; set; }
         public bool ssl { get; set; }
+        public bool allowAdmin { get; set; }
     }
 }
