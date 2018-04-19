@@ -6,7 +6,7 @@ In this version added .NET Core / Standard Support
 
 #### .NET Component to implement cache in your application Cache using MemoryCache or Redis in C#
 
-[![Build Status](https://ci.appveyor.com/api/projects/status/aomckm3j6w6i9l2f?retina=true)](https://ci.appveyor.com/project/thiagoloureiro/testacache-4rl2j) 
+[![Build Status](https://ci.appveyor.com/api/projects/status/aomckm3j6w6i9l2f?retina=true)](https://ci.appveyor.com/project/thiagoloureiro/testacache-pxfmcj) 
 
 [![NuGet](https://buildstats.info/nuget/TestaCache.NetCore)](http://www.nuget.org/packages/TestaCache.NetCore)
 
