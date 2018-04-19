@@ -8,7 +8,7 @@ In this version added .NET Core / Standard Support
 
 [![Build Status](https://img.shields.io/appveyor/ci/thiagoloureiro/testacache-4rl2j/master.svg)](https://ci.appveyor.com/project/thiagoloureiro/testacache-4rl2j) 
 
-[![NuGet](https://buildstats.info/nuget/TestaCache)](http://www.nuget.org/packages/TestaCache)
+[![NuGet](https://buildstats.info/nuget/TestaCache.NetCore)](http://www.nuget.org/packages/TestaCache.NetCore)
 
 ## How to Use:
 Open Package Manager Console and run:
