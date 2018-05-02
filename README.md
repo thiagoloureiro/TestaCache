@@ -4,12 +4,9 @@
 
 #### .NET Component to implement cache in your application Cache using MemoryCache or Redis in C#
 
-<img src="https://wiprojects.visualstudio.com/_apis/public/build/definitions/8ee69205-3d59-40e7-8207-9cc6a8fa8785/6/badge"/>
+[![Build Status](https://img.shields.io/appveyor/ci/thiagoloureiro/testacache/master.svg)](https://ci.appveyor.com/project/thiagoloureiro/testacache) 
 
 [![NuGet](https://buildstats.info/nuget/TestaCache)](http://www.nuget.org/packages/TestaCache)
-
-This package use PostSharp Essentials, so it's limited to use up to 10 Classes with the attributes.
-We are planning to use another AOP in the next version.
 
 ## How to Use:
 Open Package Manager Console and run:
@@ -66,11 +63,11 @@ public List<dynamic> ReturnCustomer()
 ```
 
 ## Usage with MemoryCache
-Create the Attribute **[CacheableResult]**
+Create the Attribute **[CacheableResult(600)]** 10 minutes Cache (600 seconds)
 
 #### Code Sample
 ```
-[CacheableResult]
+[CacheableResult(600)]
 public List<Customer> ReturnCustomer()
 {
 	var lstCustomer = new List<Customer>();
@@ -113,7 +110,7 @@ Add **[AffectedCacheableMethods("ReturnCustomer")** with the MethodName who Cach
 
 #### Code Sample
 ```
-[RedisInvalidate("ReturnCustomer")]
+[AffectedCacheableMethods("ReturnCustomer")]
 public bool UpdateCustomer()
 {
 	return true;
