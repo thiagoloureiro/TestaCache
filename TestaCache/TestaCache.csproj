@@ -33,8 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="PostSharp" Version="5.0.50" />
-    <PackageReference Include="PostSharp.Redist" Version="5.0.50" />
+    <PackageReference Include="PostSharp">
+      <Version>5.0.50</Version>
+    </PackageReference>
+    <PackageReference Include="PostSharp.Redist">
+      <Version>5.0.50</Version>
+    </PackageReference>
     <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
   </ItemGroup>
   <ItemGroup>

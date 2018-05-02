@@ -2,15 +2,15 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <title>$title$</title>
     <authors>Thiago Loureiro</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/thiagoloureiro/TestaCache</projectUrl>
-    <iconUrl>https://github.com/thiagoloureiro/TestaCache/blob/master/TestaCache/cache-ico.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/thiagoloureiro/TestaCache/master/TestaCache/cache-ico.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Fixed Nuget Dependencies</releaseNotes>
+    <releaseNotes>Added Support to Single Object</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <dependencies>
       <dependency id="PostSharp" version="5.0.41"/>
