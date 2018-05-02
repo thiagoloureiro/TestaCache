@@ -51,6 +51,7 @@
     <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonExtension.cs" />
     <Compile Include="MemoryCache\Attributes\AffectedCacheableMethodsAttribute.cs" />
     <Compile Include="MemoryCache\Attributes\CacheableResultAttribute.cs" />
     <Compile Include="MemoryCache\Attributes\ClearFullCacheAttribute.cs" />

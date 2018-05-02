@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using PostSharp.Aspects;
 
 namespace TestaCache.Redis.Attributes
@@ -35,7 +37,20 @@ namespace TestaCache.Redis.Attributes
 
         private static dynamic Deserialize(string data)
         {
-            return JsonConvert.DeserializeObject<List<dynamic>>(data, Settings);
+            try
+            {
+                dynamic ret;
+                var isValidObject = data.TryParseJson<List<dynamic>>(out _);
+
+                ret = isValidObject ? JsonConvert.DeserializeObject<List<dynamic>>(data, Settings) : JsonConvert.DeserializeObject<dynamic>(data, Settings);
+
+                return ret;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
